@@ -1,0 +1,259 @@
+:root {
+    /* body */
+    --background-color: white;
+    /* tiles */
+    --border-color: darkgray;
+    --text-color: black;
+    --tile-border-highlight: black;
+    /* button */
+    --button-text-color: black;
+    --button-background-color: #FAFBFC;
+    --button-hover-background-color: #F3F4F6;
+}
+
+.dark-theme {
+    --background-color: black;
+    --border-color: rgb(58, 58, 58);
+    --text-color: white;
+    --tile-border-highlight: white;
+    /* button */
+    --button-text-color: white;
+    --button-background-color: black;
+    --button-hover-background-color: rgb(58, 58, 58);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+hr {
+    width: 500px;
+}
+
+
+#h1 {
+    display: flex;
+    columns: var(--text-color);
+}
+
+#heading {
+    margin-left: 60px;
+}
+
+#icon {
+    width: 30px;
+    margin-left: 30px;
+    cursor: pointer;
+    justify-content: right;
+    /* background-color: blue; */
+}
+
+.invert {
+    -webkit-filter: invert(100%);
+}
+
+#title {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 0px;
+}
+
+#board {
+    width: 350px;
+    height: 420px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    /* box */
+    border: 2px solid var(--border-color);
+    width: 60px;
+    height: 60px;
+    margin: 2.5px;
+
+    /* text */
+    color: var(--text-color);
+    font-size: 36px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-highlight {
+    border-color: var(--tile-border-highlight);
+}
+
+/* buttons */
+/* < !-- HTML !--><button class="button-4" role="button">Button 4</button> */
+
+/* CSS */
+.button-4 {
+    appearance: none;
+    background-color: var(--button-background-color);
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+    /* box-sizing: border-box; */
+    color: var(--button-text-color);
+    cursor: pointer;
+    display: flex;
+    /* font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-size: 14px;
+    font-weight: 500; */
+    /* line-height: 20px; */
+    list-style: none;
+    /* padding: 6px 16px; */
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+.button-4:hover {
+    background-color: var(--button-hover-background-color);
+    color: var(--button-text-color);
+    text-decoration: none;
+    transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+    background-color: #FAFBFC;
+    border-color: rgba(27, 31, 35, 0.15);
+    color: #959DA5;
+    cursor: default;
+}
+
+.button-4:active {
+    background-color: #EDEFF2;
+    box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+    transition: none 0s;
+}
+
+.button-4:focus {
+    outline: 1px transparent;
+}
+
+.button-4:before {
+    display: none;
+}
+
+.button-4:-webkit-details-marker {
+    display: none;
+}
+
+.correct {
+    background-color: #6aaa64;
+    color: white;
+    border-color: white;
+}
+
+.present {
+    background-color: #c9b458;
+    color: white;
+    border-color: white;
+}
+
+.absent {
+    background-color: #787c7e;
+    color: white;
+    border-color: white;
+
+}
+
+.keyboard-row {
+    width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.key-tile {
+    /* box */
+    border: 1px solid darkgray;
+    width: 36px;
+    height: 40px;
+    margin: 1px;
+
+    /* text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.enter-key-tile {
+    /* box */
+    border: 1px solid darkgray;
+    width: 76px;
+    height: 40px;
+    margin: 1px;
+
+    /* text */
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* prevents text selection */
+.noSelect {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.noSelect:focus {
+    outline: none !important;
+}
+
+.shakex {
+    animation-name: horizontal-shaking;
+    animation-duration: 0.3s;
+}
+
+.shakex-long {
+    animation-name: horizontal-shaking;
+    animation-duration: 0.3s;
+    animation-timing-function: linear;
+    animation-iteration-count: 3;
+}
+
+@keyframes horizontal-shaking {
+    0% {
+        transform: translateX(0)
+    }
+
+    25% {
+        transform: translateX(5px)
+    }
+
+    50% {
+        transform: translateX(-5px)
+    }
+
+    75% {
+        transform: translateX(5px)
+    }
+
+    100% {
+        transform: translateX(0)
+    }
+}
